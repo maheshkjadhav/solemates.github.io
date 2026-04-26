@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#1A1208"/>
+<title>Delete Account — SoleMates</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --o:#F4521E;--dk:#1A1208;--cr:#FBF8F4;--wh:#fff;
+  --bdr:#E8E0D8;--muted:#8A7D72;--grn:#2D7A3A;--grn-l:#E8F5EA;
+  --red:#A32D2D;--red-l:#FCEBEB;--red-mid:#F09595;
+  --ff-h:'Syne',sans-serif;--ff-b:'Instrument Sans',sans-serif;
+}
+html,body{min-height:100%;background:var(--cr);font-family:var(--ff-b);color:var(--dk)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.page{max-width:520px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* header */
+.header{display:flex;align-items:center;gap:10px;margin-bottom:2.5rem;animation:fadeUp .5s ease both}
+.logo-icon{width:40px;height:40px;background:var(--o);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-name{font-family:var(--ff-h);font-size:22px;font-weight:800;color:var(--dk)}
+.logo-name span{color:var(--o)}
+
+/* hero */
+.hero{margin-bottom:2rem;animation:fadeUp .5s ease .1s both}
+.hero h1{font-family:var(--ff-h);font-size:28px;font-weight:800;color:var(--dk);line-height:1.2;margin-bottom:8px}
+.hero p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* options */
+.option-card{background:var(--wh);border:1.5px solid var(--bdr);border-radius:16px;padding:1.25rem;margin-bottom:1rem;animation:fadeUp .5s ease both}
+.option-card:nth-child(1){animation-delay:.15s}
+.option-card:nth-child(2){animation-delay:.25s}
+.option-card:nth-child(3){animation-delay:.35s}
+.option-card.danger{border-color:var(--red-mid)}
+.option-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:.75rem}
+.badge-fast{background:#E6F1FB;color:#185FA5}
+.badge-email{background:#E8F5EA;color:var(--grn)}
+.badge-inapp{background:#FFF1EC;color:#993C1D}
+.option-title{font-family:var(--ff-h);font-size:17px;font-weight:700;color:var(--dk);margin-bottom:6px}
+.option-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.option-steps{display:flex;flex-direction:column;gap:6px;margin-bottom:1.1rem}
+.opt-step{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.5}
+.opt-n{width:20px;height:20px;border-radius:50%;background:var(--o);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.opt-n.grn{background:var(--grn)}
+.opt-t strong{color:var(--dk);font-weight:600}
+.opt-t code{font-family:monospace;font-size:12px;background:#F5F0EB;padding:1px 5px;border-radius:3px}
+
+/* email form */
+.form-group{margin-bottom:.85rem}
+.form-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;display:block}
+.form-input{width:100%;padding:12px 14px;border:1.5px solid var(--bdr);border-radius:12px;background:var(--wh);font-family:var(--ff-b);font-size:14px;color:var(--dk);outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--o)}
+textarea.form-input{resize:vertical;min-height:80px;line-height:1.6}
+.form-btn{width:100%;padding:14px;border:none;border-radius:99px;font-family:var(--ff-h);font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.btn-danger-full{background:#E24B4A;color:#fff}
+.btn-danger-full:hover{background:#c23b3b;transform:translateY(-1px)}
+.btn-primary{background:var(--o);color:#fff}
+.btn-primary:hover{background:#d94018;transform:translateY(-1px)}
+
+/* warn box */
+.warn-box{background:var(--red-l);border:1px solid var(--red-mid);border-radius:12px;padding:1rem;margin-bottom:1rem}
+.warn-box strong{font-size:13px;color:var(--red);display:block;margin-bottom:.4rem}
+.warn-box ul{margin:.25rem 0 0 1.1rem;font-size:12px;color:#7A1A1A;line-height:1.9}
+
+/* success */
+.success-msg{display:none;background:var(--grn-l);border:1px solid #A8D4B0;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:1rem}
+.success-msg.show{display:block;animation:fadeUp .3s ease}
+.success-msg .s-icon{font-size:32px;margin-bottom:.5rem}
+.success-msg h3{font-family:var(--ff-h);font-size:16px;font-weight:700;color:var(--grn);margin-bottom:.4rem}
+.success-msg p{font-size:13px;color:#3b6d11;line-height:1.6}
+
+/* footer */
+.footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--bdr);text-align:center;animation:fadeUp .5s ease .4s both}
+.footer p{font-size:12px;color:var(--muted);line-height:1.7}
+.footer a{color:var(--o);text-decoration:none;font-weight:600}
+
+.divider{height:1px;background:var(--bdr);margin:1.5rem 0;animation:fadeUp .5s ease .3s both}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-icon">
+      <svg width="22" height="22" viewBox="0 0 44 44" fill="none">
+        <ellipse cx="22" cy="27" rx="14" ry="9" fill="white" opacity=".95"/>
+        <circle cx="15" cy="28" r="2.5" fill="#F4521E"/>
+        <circle cx="22" cy="25" r="2" fill="#F4521E" opacity=".75"/>
+        <circle cx="29" cy="27" r="1.6" fill="#F4521E" opacity=".5"/>
+      </svg>
+    </div>
+    <div class="logo-name">Sole<span>Mates</span></div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Account &amp; data<br>deletion request</h1>
+    <p>You have the right to delete your SoleMates account and all associated personal data at any time. Choose the method that works best for you below.</p>
+  </div>
+
+  <!-- OPTION 1: In-app (fastest) -->
+  <div class="option-card">
+    <div class="option-badge badge-inapp">Fastest — instant</div>
+    <div class="option-title">Delete directly in the app</div>
+    <div class="option-desc">If you have the SoleMates app installed, you can delete your account and all data instantly from within the app.</div>
+    <div class="option-steps">
+      <div class="opt-step"><div class="opt-n">1</div><div class="opt-t">Open <strong>SoleMates</strong> on your device</div></div>
+      <div class="opt-step"><div class="opt-n">2</div><div class="opt-t">Tap the <strong>Account</strong> tab (last tab in the bottom bar)</div></div>
+      <div class="opt-step"><div class="opt-n">3</div><div class="opt-t">Scroll to <strong>Danger zone</strong> → tap <strong>Delete my account</strong></div></div>
+      <div class="opt-step"><div class="opt-n">4</div><div class="opt-t">Type <code>DELETE</code> to confirm → tap <strong>Delete my account</strong></div></div>
+    </div>
+    <div class="warn-box">
+      <strong>This will permanently delete:</strong>
+      <ul>
+        <li>Your profile and Google sign-in link</li>
+        <li>Your entire training plan and schedule</li>
+        <li>All logged workouts, pace and heart rate data</li>
+        <li>Your progress history and personal bests</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OPTION 2: Email request form -->
+  <div class="option-card">
+    <div class="option-badge badge-email">Via email — within 30 days</div>
+    <div class="option-title">Submit a deletion request</div>
+    <div class="option-desc">Don't have the app? Submit a request below and we'll delete your account and all associated data within 30 days.</div>
+
+    <div id="emailForm">
+      <div class="form-group">
+        <label class="form-label" for="req-name">Your full name</label>
+        <input class="form-input" type="text" id="req-name" placeholder="e.g. Alex Johnson"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="req-email">Email address linked to your account</label>
+        <input class="form-input" type="email" id="req-email" placeholder="your@gmail.com"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="req-reason">Reason (optional)</label>
+        <textarea class="form-input" id="req-reason" placeholder="e.g. I no longer use the app / I want my data removed"></textarea>
+      </div>
+      <div id="form-error" style="display:none;background:#FCEBEB;border:1px solid #F09595;border-radius:8px;padding:.65rem 1rem;font-size:12px;color:#7A1A1A;margin-bottom:.75rem"></div>
+      <button class="form-btn btn-danger-full" onclick="submitRequest()">Submit deletion request</button>
+    </div>
+
+    <div class="success-msg" id="emailSuccess">
+      <div class="s-icon">✓</div>
+      <h3>Request received</h3>
+      <p>Your deletion request has been sent to <strong>privacy@solemates.app</strong>. We will permanently delete your account and all associated data within <strong>30 days</strong> and send you a confirmation email.</p>
+    </div>
+  </div>
+
+  <!-- OPTION 3: Direct email -->
+  <div class="option-card">
+    <div class="option-badge badge-fast">Direct email</div>
+    <div class="option-title">Email us directly</div>
+    <div class="option-desc">You can also email us directly at any time with a deletion request.</div>
+    <div class="option-steps">
+      <div class="opt-step"><div class="opt-n grn">1</div><div class="opt-t">Email <strong>privacy@solemates.app</strong></div></div>
+      <div class="opt-step"><div class="opt-n grn">2</div><div class="opt-t">Subject: <strong>Account Deletion Request</strong></div></div>
+      <div class="opt-step"><div class="opt-n grn">3</div><div class="opt-t">Include your <strong>name</strong> and the <strong>Gmail address</strong> linked to your account</div></div>
+    </div>
+    <a href="mailto:privacy@solemates.app?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20SoleMates%20account%20and%20all%20associated%20data.%0A%0AName%3A%20%0AEmail%3A%20%0A">
+      <button class="form-btn btn-primary">Open email app</button>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      <strong>What gets deleted:</strong> your profile, Google sign-in link, training plan, all workout logs, progress data, and personal bests.<br><br>
+      <strong>What we retain:</strong> anonymised, non-identifiable aggregate statistics only (no personal data).<br><br>
+      <strong>Retention period:</strong> all personal data is purged within 30 days of a confirmed request.<br><br>
+      Questions? <a href="mailto:privacy@solemates.app">privacy@solemates.app</a> &nbsp;·&nbsp;
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </div>
+
+</div>
+
+<script>
+function submitRequest(){
+  const name=document.getElementById('req-name').value.trim();
+  const email=document.getElementById('req-email').value.trim();
+  const err=document.getElementById('form-error');
+
+  if(!name){err.textContent='Please enter your full name.';err.style.display='block';return;}
+  if(!email||!email.includes('@')){err.textContent='Please enter a valid email address.';err.style.display='block';return;}
+  err.style.display='none';
+
+  // Build mailto link and open it
+  const subject=encodeURIComponent('Account Deletion Request — SoleMates');
+  const body=encodeURIComponent(
+    'Hello,\n\nI would like to request the permanent deletion of my SoleMates account and all associated personal data.\n\nName: '+name+'\nEmail: '+email+'\n\nPlease confirm once my data has been deleted.\n\nThank you.'
+  );
+  window.location.href='mailto:privacy@solemates.app?subject='+subject+'&body='+body;
+
+  // Show success
+  document.getElementById('emailForm').style.display='none';
+  document.getElementById('emailSuccess').classList.add('show');
+}
+</script>
+</body>
+</html>

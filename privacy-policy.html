@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#1A1208"/>
+<meta name="description" content="SoleMates Privacy Policy — how we collect, use and protect your personal data."/>
+<title>Privacy Policy — SoleMates</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --o:#F4521E;--o2:#FF6B3D;--o-light:#FFF1EC;--o-mid:#FDDDD3;
+  --dk:#1A1208;--brn:#3D2B1F;--tan:#C8A882;
+  --cr:#FBF8F4;--wh:#FFFFFF;--bdr:#E8E0D8;--muted:#8A7D72;
+  --grn:#2D7A3A;--grn-l:#E8F5EA;
+  --ff-h:'Syne',sans-serif;--ff-b:'Instrument Sans',sans-serif;
+}
+html,body{background:var(--cr);font-family:var(--ff-b);color:var(--dk);line-height:1.7}
+
+/* ── NAV ── */
+nav{background:var(--dk);padding:0 1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(244,82,30,.2)}
+.nav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-icon{width:32px;height:32px;background:var(--o);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-name{font-family:var(--ff-h);font-size:18px;font-weight:800;color:#fff}
+.nav-name span{color:var(--o)}
+.nav-link{font-size:12px;color:var(--tan);text-decoration:none;font-weight:500;letter-spacing:.05em;padding:6px 12px;border:1px solid rgba(200,168,130,.3);border-radius:99px;transition:all .2s}
+.nav-link:hover{border-color:var(--o);color:#fff}
+
+/* ── HERO ── */
+.hero{background:var(--dk);padding:3rem 1.5rem 4rem;position:relative;overflow:hidden}
+.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(244,82,30,.12)}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;font-weight:700;color:var(--o);text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}
+.hero h1{font-family:var(--ff-h);font-size:clamp(32px,5vw,48px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:1rem;letter-spacing:-1px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:16px}
+.hero-meta span{font-size:13px;color:var(--tan);display:flex;align-items:center;gap:5px}
+.meta-dot{width:5px;height:5px;border-radius:50%;background:var(--o);flex-shrink:0}
+
+/* ── LAYOUT ── */
+.main{max-width:760px;margin:0 auto;padding:3rem 1.5rem 4rem}
+
+/* ── SUMMARY BOX ── */
+.summary-box{background:var(--dk);border-radius:16px;padding:1.75rem;margin-bottom:2.5rem;position:relative;overflow:hidden}
+.summary-box::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(244,82,30,.15)}
+.summary-box-title{font-family:var(--ff-h);font-size:15px;font-weight:700;color:var(--o);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.summary-item{background:rgba(255,255,255,.06);border-radius:10px;padding:.85rem 1rem;border:1px solid rgba(255,255,255,.08)}
+.summary-item-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:3px}
+.summary-item-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* ── TOC ── */
+.toc{background:var(--wh);border:1px solid var(--bdr);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:2.5rem}
+.toc-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.toc-list li a{font-size:13px;color:var(--brn);text-decoration:none;display:flex;align-items:center;gap:8px;padding:5px 0;transition:color .15s}
+.toc-list li a:hover{color:var(--o)}
+.toc-num{font-size:11px;font-weight:700;color:var(--o);min-width:20px}
+
+/* ── SECTIONS ── */
+.section{margin-bottom:2.5rem;scroll-margin-top:72px}
+.section-num{font-size:11px;font-weight:700;color:var(--o);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.section h2{font-family:var(--ff-h);font-size:22px;font-weight:800;color:var(--dk);margin-bottom:1rem;line-height:1.25}
+.section p{font-size:14px;color:var(--brn);line-height:1.75;margin-bottom:.9rem}
+.section p:last-child{margin-bottom:0}
+.section ul{margin:.75rem 0 .9rem 1.25rem;display:flex;flex-direction:column;gap:6px}
+.section ul li{font-size:14px;color:var(--brn);line-height:1.6;padding-left:4px}
+.section ul li::marker{color:var(--o)}
+
+/* ── DATA TABLE ── */
+.data-table{width:100%;border-collapse:collapse;margin:.75rem 0 .9rem;border-radius:12px;overflow:hidden;border:1px solid var(--bdr)}
+.data-table th{background:var(--dk);color:var(--tan);font-family:var(--ff-h);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.7rem 1rem;text-align:left}
+.data-table td{padding:.75rem 1rem;font-size:13px;color:var(--brn);border-bottom:1px solid var(--bdr);vertical-align:top;line-height:1.55}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:nth-child(even) td{background:rgba(244,82,30,.03)}
+.data-no{color:var(--grn);font-weight:600}
+.data-yes{color:var(--o);font-weight:600}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight{background:var(--o-light);border:1px solid var(--o-mid);border-left:4px solid var(--o);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:.9rem 0;font-size:13px;color:#7A3418;line-height:1.65}
+.highlight strong{color:var(--dk)}
+
+/* ── RIGHTS GRID ── */
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.75rem 0}
+.right-card{background:var(--wh);border:1px solid var(--bdr);border-radius:10px;padding:.9rem 1rem}
+.right-card-title{font-size:13px;font-weight:600;color:var(--dk);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.right-dot{width:7px;height:7px;border-radius:50%;background:var(--o);flex-shrink:0}
+.right-card p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+
+/* ── CONTACT CARD ── */
+.contact-card{background:var(--dk);border-radius:14px;padding:1.5rem;margin-top:.75rem}
+.contact-card-title{font-family:var(--ff-h);font-size:16px;font-weight:700;color:#fff;margin-bottom:.75rem}
+.contact-row{display:flex;align-items:center;gap:10px;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.contact-row:last-child{border-bottom:none;padding-bottom:0}
+.contact-label{font-size:12px;color:var(--tan);min-width:90px}
+.contact-value{font-size:13px;color:#fff;font-weight:500}
+.contact-value a{color:var(--o);text-decoration:none}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--bdr);margin:2rem 0}
+
+/* ── FOOTER ── */
+footer{background:var(--dk);padding:2rem 1.5rem}
+.footer-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-left{font-size:12px;color:var(--tan)}
+.footer-left strong{color:#fff;font-family:var(--ff-h)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:12px;color:var(--tan);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:var(--o)}
+
+@media(max-width:520px){
+  .summary-grid{grid-template-columns:1fr}
+  .rights-grid{grid-template-columns:1fr}
+  .data-table{font-size:12px}
+  .data-table td,.data-table th{padding:.6rem .75rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <div class="nav-icon">
+        <svg width="18" height="18" viewBox="0 0 44 44" fill="none"><ellipse cx="22" cy="27" rx="14" ry="9" fill="white" opacity=".95"/><circle cx="15" cy="28" r="2.5" fill="#F4521E"/><circle cx="22" cy="25" r="2" fill="#F4521E" opacity=".75"/><circle cx="29" cy="27" r="1.6" fill="#F4521E" opacity=".5"/></svg>
+      </div>
+      <div class="nav-name">Sole<span>Mates</span></div>
+    </a>
+    <a class="nav-link" href="delete-account.html">Delete account →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-ring" style="width:400px;height:400px;right:-150px;top:-150px"></div>
+  <div class="hero-ring" style="width:600px;height:600px;right:-200px;top:-200px"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <div class="hero-meta">
+      <span><div class="meta-dot"></div>Effective: 22 April 2026</span>
+      <span><div class="meta-dot"></div>Last updated: 22 April 2026</span>
+      <span><div class="meta-dot"></div>App: SoleMates v1.0</span>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SUMMARY -->
+  <div class="summary-box">
+    <div class="summary-box-title">Summary — the short version</div>
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="summary-item-title">We collect</div>
+        <div class="summary-item-desc">Your name, email (via Google), workout data, and crash logs</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-title">We never sell</div>
+        <div class="summary-item-desc">Your personal data is never sold, rented or traded. Ever.</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-title">You're in control</div>
+        <div class="summary-item-desc">Export or delete your data at any time, instantly in-app</div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-item-title">GDPR compliant</div>
+        <div class="summary-item-desc">Full rights to access, correct, export and erase your data</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1.</span> Who we are</a></li>
+      <li><a href="#s2"><span class="toc-num">2.</span> Data we collect</a></li>
+      <li><a href="#s3"><span class="toc-num">3.</span> How we use your data</a></li>
+      <li><a href="#s4"><span class="toc-num">4.</span> Data sharing &amp; third parties</a></li>
+      <li><a href="#s5"><span class="toc-num">5.</span> Data storage &amp; security</a></li>
+      <li><a href="#s6"><span class="toc-num">6.</span> Data retention</a></li>
+      <li><a href="#s7"><span class="toc-num">7.</span> Your rights</a></li>
+      <li><a href="#s8"><span class="toc-num">8.</span> Children's privacy</a></li>
+      <li><a href="#s9"><span class="toc-num">9.</span> Google Sign-In</a></li>
+      <li><a href="#s10"><span class="toc-num">10.</span> Push notifications</a></li>
+      <li><a href="#s11"><span class="toc-num">11.</span> Changes to this policy</a></li>
+      <li><a href="#s12"><span class="toc-num">12.</span> Contact us</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-num">Section 1</div>
+    <h2>Who we are</h2>
+    <p>SoleMates ("we", "us", "our") is a free running training application. We are the data controller responsible for your personal data collected through the SoleMates Android app.</p>
+    <div class="contact-card">
+      <div class="contact-card-title">Data controller contact</div>
+      <div class="contact-row"><span class="contact-label">App name</span><span class="contact-value">SoleMates</span></div>
+      <div class="contact-row"><span class="contact-label">Email</span><span class="contact-value"><a href="mailto:privacy@solemates.app">privacy@solemates.app</a></span></div>
+      <div class="contact-row"><span class="contact-label">Website</span><span class="contact-value"><a href="#">solemates.app</a></span></div>
+      <div class="contact-row"><span class="contact-label">Response time</span><span class="contact-value">Within 30 days</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-num">Section 2</div>
+    <h2>Data we collect</h2>
+    <p>We collect only the data necessary to provide the SoleMates training service. Here is a complete list of every category we collect:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Category</th><th>Data collected</th><th>Source</th><th>Required?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Account</strong></td><td>Full name, email address, Google account ID, profile photo (display only)</td><td>Google OAuth 2.0</td><td><span class="data-yes">Yes</span></td></tr>
+        <tr><td><strong>Profile</strong></td><td>Age, current run distance, goal distance, training dates, runs per week, fitness level</td><td>User-entered</td><td><span class="data-yes">Yes</span></td></tr>
+        <tr><td><strong>Workouts</strong></td><td>Date, activity type, distance (km), duration (min), pace, heart rate, effort rating, notes</td><td>User-entered</td><td><span class="data-yes">Yes</span></td></tr>
+        <tr><td><strong>Device</strong></td><td>Device model, OS version, app version, crash logs</td><td>Automatic</td><td><span class="data-yes">Yes</span></td></tr>
+        <tr><td><strong>Location</strong></td><td>Not collected</td><td>—</td><td><span class="data-no">No</span></td></tr>
+        <tr><td><strong>Payments</strong></td><td>Not collected (app is free)</td><td>—</td><td><span class="data-no">No</span></td></tr>
+        <tr><td><strong>Contacts</strong></td><td>Not collected</td><td>—</td><td><span class="data-no">No</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <strong>We do not collect:</strong> GPS location, camera access, microphone, contacts, browsing history, financial data, or any data from other apps on your device.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-num">Section 3</div>
+    <h2>How we use your data</h2>
+    <p>We use your personal data only for the following purposes. We process each on the legal basis shown:</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>Purpose</th><th>Legal basis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Creating and managing your account</td><td>Contractual necessity</td></tr>
+        <tr><td>Generating your personalised training plan</td><td>Contractual necessity</td></tr>
+        <tr><td>Displaying workout history, charts and statistics</td><td>Contractual necessity</td></tr>
+        <tr><td>Providing AI-powered coaching reports</td><td>Contractual necessity</td></tr>
+        <tr><td>Sending training reminders and notifications</td><td>Consent (opt-in)</td></tr>
+        <tr><td>Diagnosing and fixing technical bugs</td><td>Legitimate interests</td></tr>
+        <tr><td>Improving the app using anonymised aggregate data</td><td>Legitimate interests</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-num">Section 4</div>
+    <h2>Data sharing &amp; third parties</h2>
+    <p><strong>We do not sell, rent, or trade your personal data.</strong> We may share data only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — authentication and database hosting (EU region). Bound by Google's Data Processing Agreement.</li>
+      <li><strong>Google Analytics for Firebase</strong> — anonymised, aggregated usage statistics only. No personal data.</li>
+      <li><strong>Legal requirements</strong> — if required by law, court order or government authority.</li>
+      <li><strong>Business transfer</strong> — if SoleMates is acquired, you will be notified 30 days before your data transfers to any new owner.</li>
+    </ul>
+    <div class="highlight">No advertising networks. No data brokers. No marketing partners. We do not build advertising profiles or share personal data with any commercial third party.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-num">Section 5</div>
+    <h2>Data storage &amp; security</h2>
+    <p>Your data is stored on Google Firebase servers located in the <strong>European Union (Belgium, eu-west1)</strong>, ensuring compliance with GDPR data residency requirements.</p>
+    <p>We implement the following security measures:</p>
+    <ul>
+      <li>All data encrypted in transit using <strong>TLS 1.2 or higher</strong></li>
+      <li>All data encrypted at rest using <strong>AES-256</strong></li>
+      <li>Authentication handled entirely by Google OAuth 2.0 — we never store passwords</li>
+      <li>Access to production data restricted to authorised personnel only</li>
+      <li>Regular security reviews and dependency auditing</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-num">Section 6</div>
+    <h2>Data retention</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Data type</th><th>Retention period</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Account &amp; profile data</td><td>Until account deletion</td></tr>
+        <tr><td>Workout &amp; training data</td><td>Until account deletion</td></tr>
+        <tr><td>Crash logs</td><td>90 days</td></tr>
+        <tr><td>Anonymised aggregate analytics</td><td>Indefinite (not personally identifiable)</td></tr>
+      </tbody>
+    </table>
+    <p>When you delete your account — whether in-app or by emailing us — all personally identifiable data is permanently purged from our systems within <strong>30 days</strong>.</p>
+    <div class="highlight"><strong>To delete your account:</strong> open SoleMates → Account tab → Delete my account — or visit <a href="delete-account.html" style="color:#7A3418;font-weight:600">solemates.app/delete-account</a></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-num">Section 7</div>
+    <h2>Your rights</h2>
+    <p>Under GDPR and applicable data protection law you have the following rights. To exercise any of them, email <a href="mailto:privacy@solemates.app" style="color:var(--o);font-weight:600">privacy@solemates.app</a>. We respond within 30 days.</p>
+    <div class="rights-grid">
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Access</div><p>Request a copy of all personal data we hold about you</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Rectification</div><p>Request correction of inaccurate or incomplete data</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Erasure</div><p>Request permanent deletion of your data ("right to be forgotten")</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Portability</div><p>Request your data in a machine-readable format (JSON)</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Restriction</div><p>Request that we limit how we process your data</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Objection</div><p>Object to processing based on our legitimate interests</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Withdraw consent</div><p>Withdraw any consent you have given at any time</p></div>
+      <div class="right-card"><div class="right-card-title"><div class="right-dot"></div>Lodge a complaint</div><p>Complain to your national data protection authority</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-num">Section 8</div>
+    <h2>Children's privacy</h2>
+    <p>SoleMates is not directed at children under 13 years of age. We do not knowingly collect personal data from anyone under 13.</p>
+    <p>If you are a parent or guardian and believe your child has provided us with personal data, please contact us at <a href="mailto:privacy@solemates.app" style="color:var(--o);font-weight:600">privacy@solemates.app</a> and we will delete it promptly.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-num">Section 9</div>
+    <h2>Google Sign-In</h2>
+    <p>When you sign in with Google, you authorise SoleMates to access your basic profile (name, email, profile photo) as shown in the Google OAuth consent screen. We do not receive or store your Google password.</p>
+    <p>You can revoke SoleMates' access to your Google account at any time at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener" style="color:var(--o);font-weight:600">myaccount.google.com/permissions</a>. Revoking access signs you out but does not delete your SoleMates data — use the in-app delete account feature for full data removal.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-num">Section 10</div>
+    <h2>Push notifications</h2>
+    <p>SoleMates may send push notifications about your training schedule and goal milestones. You can opt in during onboarding and opt out at any time via your device's notification settings or in the SoleMates Account tab.</p>
+    <p>We never use push notifications for advertising or send unsolicited marketing messages.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <div class="section-num">Section 11</div>
+    <h2>Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make material changes we will:</p>
+    <ul>
+      <li>Update the "Last updated" date at the top of this page</li>
+      <li>Send an in-app notification at least 30 days before changes take effect</li>
+      <li>Ask for renewed consent where required by law</li>
+    </ul>
+    <p>Continued use of SoleMates after the effective date constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 12 -->
+  <div class="section" id="s12">
+    <div class="section-num">Section 12</div>
+    <h2>Contact us</h2>
+    <p>For any privacy questions, data requests, or concerns, please reach us at:</p>
+    <div class="contact-card">
+      <div class="contact-card-title">Get in touch</div>
+      <div class="contact-row"><span class="contact-label">Privacy email</span><span class="contact-value"><a href="mailto:privacy@solemates.app">privacy@solemates.app</a></span></div>
+      <div class="contact-row"><span class="contact-label">Delete account</span><span class="contact-value"><a href="delete-account.html">solemates.app/delete-account</a></span></div>
+      <div class="contact-row"><span class="contact-label">Response time</span><span class="contact-value">Within 30 days of receipt</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>SoleMates</strong> · Your running companion<br>
+      privacy@solemates.app
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="delete-account.html">Delete account</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
